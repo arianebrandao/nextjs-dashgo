@@ -1,5 +1,5 @@
 import React from "react";
-import { Box, Flex, Heading, Divider, VStack, SimpleGrid, HStack, Button } from "@chakra-ui/react";
+import { Box, Flex, Heading, Divider, VStack, SimpleGrid, HStack, Button, FormLabel } from "@chakra-ui/react";
 
 import { Header } from "../../components/Header";
 import { Sidebar } from "../../components/Sidebar";
@@ -20,13 +20,19 @@ export default function CreateUser() {
 
           <VStack spacing="8">
             <SimpleGrid minChildWidth="240px" spacing="8" w="100%">
-              <Input name="name" label="Nome completo" />
-              <Input name="email" label="E-mail" type="email" />
+              <FormLabel htmlFor="name" >Nome completo</FormLabel>
+              <Input name="name" id="name" />
+
+              <FormLabel htmlFor="email" >E-mail</FormLabel>
+              <Input name="email" id="email" type="email" />
             </SimpleGrid>
 
             <SimpleGrid minChildWidth="240px" spacing="8" w="100%">
-              <Input name="password" type="password" label="Senha" />
-              <Input name="password_confirmation" type="password" label="Confirmação da senha" />
+              <FormLabel htmlFor="password" >Senha</FormLabel>
+              <Input name="password" id="password" type="password" />
+
+              <FormLabel htmlFor="password_confirmation" >Confirmação da senha</FormLabel>
+              <Input name="password_confirmation" id="password_confirmation" type="password" />
             </SimpleGrid>
           </VStack>
 

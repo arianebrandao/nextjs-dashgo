@@ -3,8 +3,9 @@ import { Box, Flex, Heading, Button, Icon, Table, Thead, Tbody, Tr, Th, Td, Chec
 
 import { Header } from "../../components/Header";
 import { Sidebar } from "../../components/Sidebar";
-import { RiAddLine, RiPencilLine } from "react-icons/ri";
 import { Pagination } from "../../components/Pagination";
+
+import { RiAddLine, RiPencilLine } from "react-icons/ri";
 
 export default function UserList() {
   return (
