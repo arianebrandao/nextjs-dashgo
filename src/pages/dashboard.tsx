@@ -60,10 +60,6 @@ const series = [
   { name: 'inscritos', data: [2, 98, 22, 19, 128, 36, 78] }
 ]
 
-const series2 = [
-  { name: 'inscritos', data: [1, 2, 84, 45, 34, 12, 13] }
-]
-
 export default function Dashboard() {
   return (
     <Flex direction="column" h="100vh">
@@ -90,7 +86,7 @@ export default function Dashboard() {
             pb="4"
           >
             <Text fontSize="lg" mb="4">Taxa de abertura</Text>
-            <Chart options={options} series={series2} type="area" height={160} />
+            <Chart options={options} series={series} type="area" height={160} />
 
           </Box>
         </SimpleGrid>
