@@ -23,19 +23,17 @@ export function PaginationItem({ pageNumber, isCurrent = false }: PaginationItem
         {pageNumber}
       </Button>
     )
+  } else {
+    return (
+      <Button
+        size="sm"
+        fontSize="xs"
+        width="4"
+        bgColor="gray.700"
+        _hover={{ bg: 'gray.500' }}
+      >
+        {pageNumber}
+      </Button>
+    )
   }
-
-  //else
-  return (
-    <Button
-      size="sm"
-      fontSize="xs"
-      width="4"
-      bgColor="gray.700"
-      _hover={{ bg: 'gray.500' }}
-    >
-      {pageNumber}
-    </Button>
-  )
-
 }

@@ -1,7 +1,6 @@
 import { Avatar, Box, Flex, Text } from "@chakra-ui/react";
 import React from "react";
 
-
 export function Profile() {
   return (
     <Flex alignItems="center">
