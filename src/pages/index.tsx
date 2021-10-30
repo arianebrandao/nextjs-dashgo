@@ -1,5 +1,4 @@
 import { Flex, Button, Stack, FormLabel } from '@chakra-ui/react'
-import React from 'react'
 
 import { Input } from '../components/Form/Input'
 

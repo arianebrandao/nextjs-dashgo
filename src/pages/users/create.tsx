@@ -1,4 +1,3 @@
-import React from "react";
 import { Box, Flex, Heading, Divider, VStack, SimpleGrid, HStack, Button, FormLabel } from "@chakra-ui/react";
 
 import { Header } from "../../components/Header";

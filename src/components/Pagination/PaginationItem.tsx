@@ -1,5 +1,4 @@
 import { Button } from "@chakra-ui/react";
-import React from "react";
 
 interface PaginationItemProps {
   pageNumber: number;
@@ -7,7 +6,7 @@ interface PaginationItemProps {
 }
 
 export function PaginationItem({ pageNumber, isCurrent = false }: PaginationItemProps) {
-  if (isCurrent) {
+  if (isCurrent == true) {
     return (
       <Button
         size="sm"
