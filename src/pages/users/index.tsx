@@ -1,4 +1,3 @@
-import React from "react";
 import { Box, Flex, Heading, Button, Icon, Table, Thead, Tbody, Tr, Th, Td, Checkbox, Text } from "@chakra-ui/react";
 
 import { Header } from "../../components/Header";
@@ -21,7 +20,7 @@ export default function UserList() {
             <Button
               as="a"
               size="sm"
-              fontSize="small"
+              //fontSize="small"
               colorScheme="pink"
               leftIcon={<Icon as={RiAddLine} fontSize="20" />}
             >
@@ -59,7 +58,7 @@ export default function UserList() {
                   <Button
                     as="a"
                     size="sm"
-                    fontSize="small"
+                    //fontSize="small"
                     colorScheme="purple"
                     leftIcon={<Icon as={RiPencilLine} fontSize="16" />}
                   >
