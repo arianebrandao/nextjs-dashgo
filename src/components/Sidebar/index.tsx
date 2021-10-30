@@ -1,41 +1,22 @@
-import { Box, Stack, Text, Link, Icon } from "@chakra-ui/react";
+import { Box, Stack } from "@chakra-ui/react";
 import { RiContactsLine, RiDashboardLine, RiGitMergeLine, RiInputMethodLine } from "react-icons/ri";
+
+import { NavSection } from "./NavSection";
+import { NavLink } from "./NavLink";
 
 export function Sidebar() {
   return (
     <Box as="aside" w="64" mr="8">
       <Stack spacing="12" align="self-start" >
-        <Box>
-          <Text fontWeight="bold" color="gray.400" fontSize="small" textTransform="uppercase">Geral</Text>
+        <NavSection title="Geral">
+          <NavLink icon={RiDashboardLine}>Dashboard</NavLink>
+          <NavLink icon={RiContactsLine}>Usuários</NavLink>
+        </NavSection>
 
-          <Stack spacing="4" mt="8" alignItems="stretch">
-            <Link display="flex" alignItems="center">
-              <Icon as={RiDashboardLine} fontSize="20" />
-              <Text ml="4" fontSize="medium">Dashboard</Text>
-            </Link>
-
-            <Link display="flex" alignItems="center">
-              <Icon as={RiContactsLine} fontSize="20" />
-              <Text ml="4" fontSize="medium">Usuários</Text>
-            </Link>
-          </Stack>
-        </Box>
-
-        <Box>
-          <Text fontWeight="bold" color="gray.400" fontSize="small" textTransform="uppercase">Automação</Text>
-
-          <Stack spacing="4" mt="8" alignItems="stretch">
-            <Link display="flex" alignItems="center">
-              <Icon as={RiInputMethodLine} fontSize="20" />
-              <Text ml="4" fontSize="medium">Formulários</Text>
-            </Link>
-
-            <Link display="flex" alignItems="center">
-              <Icon as={RiGitMergeLine} fontSize="20" />
-              <Text ml="4" fontSize="medium">Automação</Text>
-            </Link>
-          </Stack>
-        </Box>
+        <NavSection title="Automação">
+          <NavLink icon={RiInputMethodLine}>Formulários</NavLink>
+          <NavLink icon={RiGitMergeLine}>Automação</NavLink>
+        </NavSection>
       </Stack>
     </Box>
   )
