@@ -1,6 +1,6 @@
 import Head from 'next/head'
 
-import { Flex, Button, Stack } from '@chakra-ui/react'
+import { Flex, Button, Stack, FormLabel } from '@chakra-ui/react'
 
 import { Input } from '../components/Form/Input'
 
@@ -28,8 +28,11 @@ export default function SignIn() {
           flexDirection="column"
         >
           <Stack spacing="4">
-            <Input name="email" type="email" label="E-mail" />
-            <Input name="password" type="password" label="Senha" />
+            <FormLabel htmlFor="email">E-mail</FormLabel>
+            <Input name="email" id="email" type="email" />
+
+            <FormLabel htmlFor="password">Senha</FormLabel>
+            <Input name="password" id="password" type="password"/>
           </Stack>
 
           <Button type="submit" mt="6" colorScheme="pink" size="lg" >Entrar</Button>
