@@ -1,11 +1,13 @@
-import { Stack, Button, Box } from "@chakra-ui/react";
+import { Stack, Box, Button } from "@chakra-ui/react";
+//import { PaginationItem } from "./PaginationItem";
+
+/** Skipping pagination item component due to memory leak, maybe from @chakra-ui (not sure) */
 
 export function Pagination() {
   return (
     <Stack
       direction="row"
       spacing="6"
-
       mt="8"
       justifyContent="space-between"
       alignItems="center"
@@ -14,6 +16,9 @@ export function Pagination() {
         <strong>0</strong> - <strong>10</strong> de <strong>100</strong>
       </Box>
       <Stack spacing="2" direction="row">
+        {/* <PaginationItem number={1} isCurrent />
+        <PaginationItem number={2} />
+        <PaginationItem number={3} /> */}
         <Button
           size="sm"
           fontSize="xs"
@@ -22,12 +27,11 @@ export function Pagination() {
           disabled
           _disabled={{
             bgColor: 'pink.500',
-            cursor: 'default',
+            cursor: 'default'
           }}
         >
           1
         </Button>
-
         <Button
           size="sm"
           fontSize="xs"
@@ -37,7 +41,6 @@ export function Pagination() {
         >
           2
         </Button>
-
         <Button
           size="sm"
           fontSize="xs"
