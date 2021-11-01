@@ -51,7 +51,7 @@ export default function UserList() {
                 </Tr>
               </Thead>
 
-              <Tbody>
+              <Tbody overflowX="scroll">
                 <Tr px={["4", "4", "6"]}>
                   <Td>
                     <Checkbox colorScheme="pink" />
