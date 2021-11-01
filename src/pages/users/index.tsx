@@ -1,4 +1,5 @@
 import Head from 'next/head'
+import Link from 'next/link'
 
 import { Box, Flex, Heading, Button, Icon, Table, Thead, Tbody, Tr, Th, Td, Checkbox, Text, useBreakpointValue } from "@chakra-ui/react";
 
@@ -12,7 +13,7 @@ export default function UserList() {
   const isWideVersion = useBreakpointValue({
     base: false,
     lg: true,
-  }) 
+  })
   return (
     <>
       <Head>
@@ -28,15 +29,18 @@ export default function UserList() {
             <Flex mb="8" justifyContent="space-between" alignItems="center">
               <Heading size="lg" fontWeight="normal">Usuários</Heading>
 
-              <Button
-                as="a"
-                size="sm"
-                fontSize="small"
-                colorScheme="pink"
-                leftIcon={<Icon as={RiAddLine} fontSize="20" />}
-              >
-                Criar novo usuário
-              </Button>
+              <Link href="/users/create" passHref>
+                <Button
+                  as="a"
+                  size="sm"
+                  fontSize="small"
+                  colorScheme="pink"
+                  leftIcon={<Icon as={RiAddLine} fontSize="20" />}
+                >
+                  Criar novo usuário
+                </Button>
+              </Link>
+
             </Flex>
 
             <Table colorScheme="whiteAlpha">
@@ -46,7 +50,7 @@ export default function UserList() {
                     <Checkbox colorScheme="pink" />
                   </Th>
                   <Th>Usuário</Th>
-                  { isWideVersion && <Th>Data de cadastro</Th>}
+                  {isWideVersion && <Th>Data de cadastro</Th>}
                   <Th width="8"></Th>
                 </Tr>
               </Thead>
@@ -62,7 +66,7 @@ export default function UserList() {
                       <Text fontSize="small" color="gray.300">arii.brandao@gmail.com</Text>
                     </Box>
                   </Td>
-                  { isWideVersion && <Td>29 de Outubro, 2021</Td>}
+                  {isWideVersion && <Td>29 de Outubro, 2021</Td>}
                   <Td>
                     <Button
                       as="a"
@@ -71,7 +75,7 @@ export default function UserList() {
                       colorScheme="purple"
                       leftIcon={<Icon as={RiPencilLine} fontSize="16" />}
                     >
-                      { isWideVersion ? 'Editar' : ''}
+                      {isWideVersion ? 'Editar' : ''}
                     </Button>
                   </Td>
                 </Tr>
