@@ -29,6 +29,7 @@
     "@types/react": "^17.0.33",
     "eslint": "7",
     "eslint-config-next": "12.0.1",
+    "miragejs": "^0.1.42",
     "typescript": "^4.4.4"
   }
 }
