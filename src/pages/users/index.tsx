@@ -1,6 +1,7 @@
 import Head from 'next/head'
 import NextLink from 'next/link'
 import { useState } from 'react';
+import { GetServerSideProps } from 'next';
 
 import { Box, Flex, Heading, Button, Icon, Table, Thead, Tbody, Tr, Th, Td, Checkbox, Text, useBreakpointValue, Spinner, Link } from "@chakra-ui/react";
 
@@ -10,7 +11,7 @@ import { Header } from "../../components/Header";
 import { Sidebar } from "../../components/Sidebar";
 import { Pagination } from "../../components/Pagination";
 
-import { useUsers } from '../../services/hooks/useUsers';
+import { getUsers, useUsers } from '../../services/hooks/useUsers';
 import { queryClient } from '../../services/queryClient';
 import { api } from '../../services/api';
 
@@ -131,3 +132,13 @@ export default function UserList() {
     </>
   )
 }
+
+// export const getServerSideProps: GetServerSideProps = async () => {
+//   const { users, totalCount } = await getUsers(1)
+
+//   return {
+//     props: {
+//       users,
+//     }
+//   }
+// }
