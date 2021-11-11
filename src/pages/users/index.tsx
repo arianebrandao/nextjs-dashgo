@@ -1,6 +1,7 @@
 import Head from 'next/head'
 import Link from 'next/link'
 import { useQuery } from 'react-query'
+import { api } from '../../services/api';
 
 import { Box, Flex, Heading, Button, Icon, Table, Thead, Tbody, Tr, Th, Td, Checkbox, Text, useBreakpointValue, Spinner } from "@chakra-ui/react";
 
@@ -13,8 +14,7 @@ import { Pagination } from "../../components/Pagination";
 export default function UserList() {
 
   const { data, isLoading, error, isFetching, refetch } = useQuery('users', async () => {
-    const response = await fetch('http://localhost:3000/api/users')
-    const data = await response.json()
+    const { data } = await api.get('users')
 
     const users = data.users.map(user => {
       return {
