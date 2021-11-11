@@ -1,7 +1,5 @@
 import Head from 'next/head'
 import Link from 'next/link'
-import { useQuery } from 'react-query'
-import { api } from '../../services/api';
 
 import { Box, Flex, Heading, Button, Icon, Table, Thead, Tbody, Tr, Th, Td, Checkbox, Text, useBreakpointValue, Spinner } from "@chakra-ui/react";
 
@@ -11,28 +9,11 @@ import { Header } from "../../components/Header";
 import { Sidebar } from "../../components/Sidebar";
 import { Pagination } from "../../components/Pagination";
 
+import { useUsers } from '../../services/hooks/useUsers';
+
+
 export default function UserList() {
-
-  const { data, isLoading, error, isFetching, refetch } = useQuery('users', async () => {
-    const { data } = await api.get('users')
-
-    const users = data.users.map(user => {
-      return {
-        id: user.id,
-        name: user.name,
-        email: user.email,
-        createdAt: new Date(user.createdAt).toLocaleDateString('pt-BR', {
-          day: '2-digit',
-          month: 'short',
-          year: 'numeric'
-        })
-      }
-    })
-
-    return users
-  }, {
-    staleTime: 1000* 5, // 5 sec
-  })
+  const { data, isLoading, error, isFetching, refetch } = useUsers()
 
   const isWideVersion = useBreakpointValue({
     base: false,
